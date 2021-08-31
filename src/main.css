@@ -18,3 +18,9 @@
 .font-weight {
   font-weight: 600;
 }
+
+.scores-div {
+  height: 40vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
