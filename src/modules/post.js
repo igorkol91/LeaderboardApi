@@ -5,7 +5,6 @@ const submitScores = `https://us-central1-js-capstone-backend.cloudfunctions.net
 const username = document.querySelector('#username');
 const userscore = document.querySelector('#userscore');
 const message = document.createElement('div');
-message.classList.add('message-div');
 
 const submit = async () => {
   const data = {
@@ -21,11 +20,13 @@ const submit = async () => {
   const response = await result.json();
   if (response.result) {
     message.innerText = response.result;
+    message.classList = 'bg-success message-div p-2';
   } else {
     message.innerText = response.message;
+    message.classList = 'bg-danger message-div p-2';
   }
   document.body.append(message);
-  setTimeout(() => { message.remove(); }, 3000);
+  setTimeout(() => { message.remove(); message.classList = ''; }, 3000);
 };
 
 export default submit;
